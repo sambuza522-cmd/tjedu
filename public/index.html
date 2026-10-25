@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="key">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title></title>
+<meta name="description" content="">
+<script>
+/* 주소 ?c=나라&l=언어 — 나라 데이터 파일 하나를 classic script 로 붙인다(file:// 에서도 동작) */
+(function(){var h=document.documentElement,c='tj',l='',m=false;
+try{var q=new URLSearchParams(location.search);c=(q.get('c')||'tj').toLowerCase();l=(q.get('l')||'').toLowerCase();}catch(e){}
+if(!/^[a-z]{2}$/.test(c))c='tj';if(!/^[a-z]{2}$/.test(l))l='';window.CAEDU_REQ={c:c,l:l};
+h.className+=' js';try{var t=localStorage.getItem('caedu-theme');if(t==='mono'||t==='key')h.setAttribute('data-theme',t);}catch(e){}
+try{m=matchMedia('(prefers-reduced-motion: reduce)').matches||!!(navigator.connection&&navigator.connection.saveData);}catch(e){}
+h.className+=m?' still':' motion';
+document.write('<script src="data/'+c+'.js"><\/script>');})();
+</script>
+<script src="data/common.js"></script>
+<script src="data/ru.js"></script>
+<script>
+/* 틀 파일에는 언어·나라 색을 박지 않는다: 나라 데이터의 키 색(colors)을 html 에 CSS 변수로 얹고(첫 그림 전 — 색 번쩍임 0),
+   열린 언어·기본 언어로 html lang 과 제목을 본문 전에 정한다(없으면 무채 대체색·ru 그대로) */
+(function(){var q=window.CAEDU_REQ||{},A=window.CAEDU||{},C=A.country&&A.country[q.c],h=document.documentElement;
+var K=C&&C.colors,V={key:'--key',keyOnInk:'--key-on-ink',keyOnInkLg:'--key-on-ink-lg',keyRipe:'--key-ripe'};
+if(K)for(var k in V)if(/^#[0-9a-f]{6}$/i.test(K[k]||''))h.style.setProperty(V[k],K[k]);
+if(!C||!A.lang||!A.lang.ru)return;
+var ok=function(l){return !!l&&C.open.indexOf(l)>=0&&(l==='ru'||!!(C.copy&&C.copy[l]));};
+var l=ok(q.l)?q.l:(ok(C.defaultLang)?C.defaultLang:'ru'),P=l==='ru'?A.lang.ru:C.copy[l];
+if(P&&P.meta&&P.meta.code)document.documentElement.lang=P.meta.code;if(P&&P.t&&P.t['doc.title'])document.title=P.t['doc.title'];})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-t="a11y.skip"></a>
+<div class="grain" aria-hidden="true"></div>
+<div class="grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<header class="hd" id="hd">
+  <div class="hd-row">
+    <a class="brand" id="brand" href="#s1"></a>
+    <nav class="nav" data-ta="aria-label:nav.label"><ul id="nav-list"></ul></nav>
+    <div class="tools">
+      <div class="langs" id="langs-hd"></div>
+      <button class="tool theme" type="button" data-theme-btn></button>
+      <a class="m6" id="m6" href="#s5"></a>
+      <button class="tool menu-btn" id="menu-btn" type="button" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false"></button>
+    </div>
+  </div>
+  <div class="band" id="band"><div class="mini" id="mini"></div></div>
+</header>
+
+<div class="page" id="page">
+<main id="main">
+  <section class="sec wrap s1" id="s1" aria-labelledby="h1">
+    <div class="s1-board">
+      <p class="cap" id="cap"></p>
+      <div class="board" id="board" role="group" data-ta="aria-label:board.label"></div>
+    </div>
+    <div class="s1-text">
+      <h1 id="h1" data-t="s1.h1"></h1>
+      <p class="lead" data-t="s1.lead"></p>
+      <a class="ask" id="ask" href="#s5"></a>
+    </div>
+    <p class="s1-hero-cap" data-t="s1.hero"></p>
+    <div class="hero" id="hero" aria-hidden="true"><div class="hero-row" id="hero-row"></div></div>
+  </section>
+
+  <section class="sec wrap s2" id="s2" aria-labelledby="h2-2">
+    <div class="base" id="base"></div>
+    <div class="stairs" id="stairs" role="radiogroup" aria-labelledby="h2-2"></div>
+    <div class="s2-text">
+      <h2 id="h2-2" data-t="s2.h"></h2>
+      <p class="sub" data-t="s2.sub"></p>
+      <p class="body" data-t="s2.body"></p>
+      <p class="meta s2-src" data-t="s2.src"></p>
+      <a class="tlink" id="sik" href="#" target="_blank" rel="noopener"></a>
+      <p class="meta" data-t="s2.linkNote"></p>
+    </div>
+    <div class="echo" id="echo" aria-hidden="true"><span class="bar"><span class="rk"></span><span class="et"></span></span></div>
+  </section>
+
+  <section class="sec wrap s3" id="s3" aria-labelledby="h2-3">
+    <div class="ledger" id="ledger"></div>
+    <div class="s3-text">
+      <h2 id="h2-3" data-t="s3.h"></h2>
+      <p class="body" data-t="s3.body"></p>
+      <a class="tlink" id="l3" href="#s3"></a>
+    </div>
+    <div class="guard" id="guard">
+      <p class="gl" data-t="s3.guard"></p>
+      <p class="gn" data-t="s3.guardNote"></p>
+      <i class="dash" id="dash"></i>
+    </div>
+  </section>
+
+  <section class="sec wrap s4" id="s4" aria-labelledby="h2-4">
+    <div class="steps" id="steps"></div>
+    <div class="s4-text">
+      <h2 id="h2-4" data-t="s4.h"></h2>
+      <p class="body" data-t="s4.body"></p>
+      <a class="tlink" id="l4" href="#s4"></a>
+    </div>
+    <div class="axes" id="axes"></div>
+    <div class="strip" id="strip"><p class="sl" data-t="s4.strip"></p><div class="sbx" id="sbx"></div></div>
+  </section>
+
+  <section class="sec wrap s5" id="s5" aria-labelledby="h2-5">
+    <div class="draft" id="draft">
+      <h2 class="dh" id="h2-5" data-t="s5.h"></h2>
+      <div class="dl" id="dl"></div>
+    </div>
+    <div class="send" id="send"></div>
+    <div class="check" id="chk" aria-labelledby="h3-chk" role="group"></div>
+  </section>
+</main>
+
+<footer class="ft wrap" id="ft"></footer>
+<div class="fx" id="fx" aria-hidden="true"></div>
+</div>
+
+<a class="thumb" id="thumb" href="#s5"></a>
+
+<dialog class="menu" id="menu" aria-labelledby="menu-title">
+  <div class="hd-row">
+    <span class="brand" id="brand-m"></span>
+    <div class="tools"><button class="tool" id="menu-close" type="button"></button></div>
+  </div>
+  <h2 id="menu-title" class="sr" data-t="menu.title"></h2>
+  <nav aria-labelledby="menu-title"><ul class="menu-list" id="menu-list"></ul></nav>
+  <div class="menu-tools"><div class="langs" id="langs-m"></div><button class="tool theme" type="button" data-theme-btn></button></div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

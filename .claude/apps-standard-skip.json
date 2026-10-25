@@ -1,0 +1,10 @@
+{
+  "note": "apps-new.py 가 일부러 만들지 않은 골격 자리다. apps-unify.py --stage skeleton 이 이 목록을 읽고 되살리지 않는다.",
+  "written_by": "apps-new.py",
+  "items_json": "D:\\manhattan\\fat-man\\harness\\docs\\apps-standard\\items.json",
+  "rule": "items.json skeleton[].create 가 false 인 자리만 뺀다",
+  "source": "items.json skeleton[] 포함 items.json 문서 전체를 훑음 — create 선언 7건, 적힌 곳: code_dirs, skeleton",
+  "skeleton_skip": {
+    "legacy": "items.json 이 이 자리에 create=false 라고 적었다 — 정본이 직접 「새 프로젝트에 만들지 않는다」고 선언한 자리"
+  }
+}

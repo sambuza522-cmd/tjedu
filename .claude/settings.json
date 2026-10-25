@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(**/.claude/agents/**)",
+      "Edit(**/.claude/skills/**)",
+      "Edit(**/settings*.json)",
+      "Edit(**/transfer-gate.py)",
+      "Edit(**/hq-gate.json)",
+      "Edit(**/install-global.py)",
+      "Edit(**/agent-registry.json)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"D:/manhattan/fat-man/_apps/tjedu/.claude/rail-write-guard.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

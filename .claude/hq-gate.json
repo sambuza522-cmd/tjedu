@@ -1,0 +1,22 @@
+{
+  "_readme": "tjedu 의 transfer-gate 프로젝트 선언. 이 파일이 있어야 문서 규칙(R0~R7)이 이 트리에서 판정된다 — 없으면 레일 보호만 남는다. guarded 는 대상 루트 기준 글롭이다. 지금 모드는 관측(log-only)이라 판정이 쌓이기만 하고 도구 호출을 막지 않는다. 차단으로 바꾸는 파일(.claude/hq-gate-deny.on)은 이 설치가 만들지 않았다 — 만드는 주체는 사용자다: New-Item -ItemType File -Path D:/manhattan/fat-man/_apps/tjedu/.claude/hq-gate-deny.on . rules_on 은 비워 둔다 — R3b-py-weak 은 오검 클래스가 확정돼 전역 기본 OFF 다. 이 파일 자체는 레일(rail-decl)이라 모델의 변경 시도는 게이트가 본다 — 변경은 사용자 리뷰.",
+  "project": "tjedu",
+  "guarded": [
+    "docs/**/*.{md,markdown,txt,json}",
+    "docs/**/*.{md,markdown,txt,json}.bak*"
+  ],
+  "exclude_segments": [
+    "handoffs"
+  ],
+  "route": "hq-scribe",
+  "rules_on": [],
+  "rules_off": [],
+  "_measured": {
+    "by": "harness-install.py (transfer-gate.compile_guard 호출)",
+    "guarded_matches": 1,
+    "by_first_segment": {
+      "docs": 1
+    },
+    "note": "설치 시점에 대상 트리를 훑어 잰 값이다. 대상이 바뀌면 이 수는 낡는다."
+  }
+}
