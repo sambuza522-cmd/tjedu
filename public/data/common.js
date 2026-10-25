@@ -18,7 +18,7 @@
       { id: 'vatan', name: 'Ватан', lang: 'tg', domain: 'vatan.kr', lab: '../vatan-landing.html' },
       { id: 'tjedu', name: 'TJEDU', lang: null, domain: 'tjedu.kr', lab: 'index.html?c=tj' },
       { id: 'cabridge', name: 'CA Bridge', lang: 'en', domain: 'cabridge.kr', lab: null },
-      { id: 'helpers', name: 'The Helpers', ko: '헬퍼스', lang: 'en', domain: 'helpers.co.kr', lab: '../helpers/index.html' },
+      { id: 'helpers', name: 'The Helpers', ko: '헬퍼스', lang: 'en', domain: 'thehelpers.co.kr', lab: '../helpers/index.html' },
       { id: 'datahub', name: 'CA Datahub', lang: 'en', domain: 'ca.saasmate.dev', lab: null },
       /* 타지크·러시아 쪽은 도메인 글자 그대로(지어낸 라틴 상호 없음). 한국어 이름(ko)은 한글 글꼴을 싣는 한국어 쪽에서만 */
       { id: 'martinmart', name: 'martinmart.co.kr', ko: '마트인마트', lang: null, domain: 'martinmart.co.kr', lab: null }
