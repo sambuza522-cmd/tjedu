@@ -449,3 +449,16 @@ scratch_*
 # -----------------------------------------------------------------------------
 
 # project-specific below
+
+# --- 내부 자료 (2026-10-25) ---
+# 공개 저장소에 올리지 않는다. 로컬에만 둔다.
+/docs/handoffs/from-ca-bridge-2026-10-25.md
+/docs/handoffs/from-ca-bridge-2026-10-25-yuhakwon/
+/docs/research/2026-10-24-action-plan.md
+/docs/research/2026-10-24-business-plan.md
+/docs/research/2026-10-24-pnl-model-v5.xlsx
+/docs/research/2026-10-25-jobs-axis-licensing.md
+/docs/research/2026-10-25-revenue-by-axis.md
+/docs/research/2026-10-25-university-meeting-kit.md
+/docs/research/2026-10-25-agency-ops-prep.md
+/docs/decisions/2026-10-25-four-axes-and-entity.md
